@@ -1,0 +1,15 @@
+
+
+//Grid
+$columns: 12;
+$gutter: 2%;
+
+@function grid-width($cols, $has-gutter:false) {
+
+    @if $has-gutter {
+      @return calc(((100% / #{$columns}) * #{$cols}) - #{$gutter});
+    }
+    @else {
+      @return calc((100% / #{$columns}) * #{$cols});
+    }
+}
