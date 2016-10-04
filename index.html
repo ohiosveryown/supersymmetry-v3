@@ -24,38 +24,70 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="#">
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 
 
 </head>
 <body>
 
-<!-- <div style="margin-top: 4vw"></div> -->
-<div><h1>October</h1></div>
-
+<!-- Ocotber -->
+<div><h1>Supersymmetry</h1></div>
 <section>
-  <h3>October 2016</h3>
-  <figure class="oct-16"></figure>
-
+  <h3 class="test">October 2016</h3>
+  <figure data-scroll-speed="9" class="oct-16"></figure>
   <main>
     <header><h2>Airbnb—Tokyo</h2></header>
-
     <article>
       <h3>About</h3>
       <p>The new Tokyo workplace is in the busy neighbourhood of Shinjuku. Working alongside Suppose Design Office, the company's Environments Team aimed to bring some of that ambience inside.</p>
       <p>"The main concept of this project was to recreate the feeling and vibe of a Tokyo neighbourhood. Instead of using simple walls, we laid out building-inspired volumes to articulate the space, dividing the various functions while keeping a continuity throughout the whole office." – Makoto Tanijiri</p>
       <h3>Architect</h3>
-
-      <figcaption>
-        <a target="_blank" href="https://www.suppose.jp">Studio Periphery + Suppose Design Office</a>
-      </figcaption>
-
+      <figcaption><a target="_blank" href="https://www.suppose.jp">Studio Periphery + Suppose Design Office</a></figcaption>
     </article>
   </main>
-
 </section>
 
+<nav>
+  <ul>
+    <li><a href="#"><h3>September 2016</a></h3></li>
+    <li><h3>November 2016</h3></li>
+  </ul>
+</nav>
 
-  <!-- Scripts -->
+
+  <!-- Scripts
+  <script>
+      $.fn.moveIt = function(){
+    var $window = $(window);
+    var instances = [];
+
+    $(this).each(function(){
+      instances.push(new moveItItem($(this)));
+    });
+
+    window.onscroll = function(){
+      var scrollTop = $window.scrollTop();
+      instances.forEach(function(inst){
+        inst.update(scrollTop);
+      });
+    }
+    }
+
+    var moveItItem = function(el){
+    this.el = $(el);
+    this.speed = parseInt(this.el.attr('data-scroll-speed'));
+    };
+
+    moveItItem.prototype.update = function(scrollTop){
+    var pos = scrollTop / this.speed;
+    this.el.css('transform', 'translateY(' + -pos + 'px)');
+    };
+
+    $(function(){
+    $('[data-scroll-speed]').moveIt();
+    });
+  </script>
+  -->
 
 </body>
 </html>
