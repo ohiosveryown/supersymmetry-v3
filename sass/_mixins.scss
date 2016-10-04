@@ -3,7 +3,7 @@
 //Variable Colors
 $klein: #000ABB;
 $volt: #04AF6D;
-$gravity: #2C2B2E;
+$gravity: #0C0C0C;
 
 
 // Mixins – Media Queries
@@ -21,7 +21,7 @@ $gravity: #2C2B2E;
   }
 
   @else if $class == md_landscape {
-    @media (min-width: 900px) { @content; }
+    @media (min-width: 700px) { @content; }
   }
 
   @else if $class == lg {
@@ -31,7 +31,7 @@ $gravity: #2C2B2E;
   @else if $class == xl {
     @media (min-width: 1550px) { @content; }
   }
-  
+
   //@else {
     //@warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
   //}

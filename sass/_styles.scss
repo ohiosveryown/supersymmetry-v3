@@ -8,30 +8,71 @@
 }
 
 section {
-  position: relative;
   margin: 0 auto;
+  padding: 0 0 7vw 0;
+  display: block;
   width: 90vw;
   max-width: 170rem;
+
+  @include breakpoint(lg) {
+    margin: -16rem auto auto;
+  }
+
+  h3 {
+    padding: 1vw 0;
+  }
+}
+
+caption {
+  //position: absolute;
+  margin: -4vw 0 0;
+  z-index: 101;
 }
 
 figure {
-  box-shadow: 0px 240px 80px -190px rgba(0,0,0,0.7);
+  box-shadow: 0px 240px 80px -190px rgba(0,0,0,0.6);
   position: relative;
   margin: 0 auto;
-  height: 75vh;
-  width: grid-width(10);
+  height: 80vh;
+  width: grid-width(12);
   z-index: 202;
 }
 
+/*
+figure:hover:before {
+  content: '';
+  display: block;
+  background: #003AFF;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  mix-blend-mode: multiply;
+}
+*/
+
+figure:before {
+  content: '';
+  display: block;
+  background: rgba(255,255,255,0.2);
+  mix-blend-mode: overlay;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 .oct-16 {
-  background-image: url('../../images/2016/october.jpg');
+  background-image: url('../../images/2016/oct.jpg');
   background-position: center;
   background-size: cover;
 }
 
 main {
   position: relative;
-  z-index: 101;
+  z-index: 303;
+
+  @include breakpoint(lg) {
+    z-index: 101;
+  }
 }
 
 main:hover {
@@ -39,13 +80,25 @@ main:hover {
 }
 
 header {
-  margin: -5rem auto 0 auto;
-  width: grid-width(8);
+  margin: 2rem auto auto;
+
+  @include breakpoint(md) {
+    margin: -5rem auto 0 auto;
+    width: grid-width(8);
+  }
 }
 
 article {
   margin: 0 auto;
-  width: grid-width(3);
+  width: grid-width(10);
+
+  @include breakpoint(md_landscape) {
+    width: grid-width(6);
+  }
+
+  @include breakpoint(lg) {
+    width: grid-width(3);
+  }
 }
 
 figcaption {

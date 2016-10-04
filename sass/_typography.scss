@@ -28,21 +28,27 @@
 
 //Headings
 h1 {
-  font: 400 1.8rem/0.8 'Circular-Std', sans-serif;
+  font: 400 0.8rem/0.8 'Circular-Std', sans-serif;
   color: $gravity;
+	letter-spacing: -5px;
+	opacity: 0;
 	text-align: center;
-	opacity: 0.05;
 
   @include breakpoint(lg) {
     font-size: 24.8rem;
+		opacity: 0.05;
   }
 }
 
 h2 {
   font-family:'Circular-Std',Sans-Serif;
-	font-size: 5.4rem;
+	font-size: 3.2rem;
   color: $gravity;
 	text-align: center;
+
+	@include breakpoint(md) {
+    font-size: 5.4rem;
+  }
 }
 
 h3 {
