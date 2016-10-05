@@ -9,23 +9,103 @@ body {
   transition-timing-function: ease-in-out;
 }
 
-nav {
-  //position: fixed;
-  //top: 40%;
-  //-webkit-backface-visibility: hidden;
-  //-webkit-transform: translateZ(0);
+
+//Navigation
+.left-nav {
+  //display: none;
   position: relative;
-  //margin-top: -20rem;
+  bottom: 0;
+  left: 3%;
+  opacity: 1;
+  float: left;
+  margin: 3rem 0;
+  transition: all 300ms ease;
+  z-index: 404;
+
+  @include breakpoint(md) {
+    position: absolute;
+    display: block;
+    bottom: 30%;
+    left: 8%;
+    margin: 0;
+    opacity: 0.15;
+  }
+
+  @include breakpoint(lg) {
+    display: block;
+    bottom: 30%;
+    left: 15%;
+  }
+
+  svg {
+    display: none;
+    @include breakpoint(md) {
+      display: block;
+      position: absolute;
+      left: 26px;
+      top: 26px;
+      transform: rotate3d(0,1,0,-180deg) scale3d(0.75, 0.75, 1);
+    }
+  }
 }
 
-ul {
-  position: relative;
-  margin: 0 auto;
-  width: 75vw;
-  
-  li:nth-child(2) {
-    float: right;
+.left-nav:hover {
+  opacity: 1;
+  svg {
+    transform: rotate3d(0,1,0,-180deg) scale3d(0.75, 0.75, 1);
   }
+}
+
+.right-nav {
+  //display: none;
+  position: relative;
+  bottom: 0;
+  right: 3%;
+  opacity: 1;
+  float: right;
+  margin: 3rem 0;
+  transition: all 300ms ease;
+  z-index: 404;
+
+  @include breakpoint(md) {
+    position: absolute;
+    display: block;
+    bottom: 30%;
+    right: 8%;
+    margin: 0;
+    opacity: 0.15;
+  }
+
+  @include breakpoint(lg) {
+    display: block;
+    bottom: 30%;
+    right: 15%;
+  }
+
+  svg {
+    display: none;
+    @include breakpoint(md) {
+      display: block;
+      position: absolute;
+      right: 26px;
+      top: 26px;
+      transform: scale3d(0.75, 0.75, 1);
+    }
+  }
+}
+
+.right-nav:hover {
+  opacity: 1;
+
+  svg {
+    transform: scale3d(0.75, 0.75, 1);
+  }
+}
+
+
+//Colophon
+aside {
+  transform: rotate3d(1,0,0,90deg);
 }
 
 //Styles
@@ -100,7 +180,8 @@ figure:before {
 }
 
 .oct-16 {
-  background-image: url('../../images/2016/oct.jpg');
+  //background-image: url('../../images/2016/oct.jpg');
+  background-image: url('../../images/2016/test.jpg');
   background-position: center;
   background-size: cover;
 }
@@ -141,7 +222,7 @@ article {
   width: grid-width(10);
 
   @include breakpoint(md_landscape) {
-    width: grid-width(6);
+    width: grid-width(5);
   }
 
   @include breakpoint(lg) {
