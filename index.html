@@ -18,24 +18,29 @@
     <link rel="icon" type="image/png" href="#">
   </head>
   <body>
-  <!--Colophon -->
+    <!-- Colophon -->
+    <div id="colophon" class="colophon"><a onclick="toggleMenu()" href="#">Close</a>
+      <p>The new Tokyo workplace is in the busy neighbourhood of Shinjuku. Working alongside Suppose Design Office, the company's Environments Team aimed to bring some of that ambience inside.</p>
+      <p>"The main concept of this project was to recreate the feeling and vibe of a Tokyo neighbourhood. Instead of using simple walls, we laid out building-inspired volumes to articulate the space, dividing the various functions while keeping a continuity throughout the whole office." – Makoto Tanijiri</p>
+    </div>
+    <aside><a onclick="toggleMenu()" href="#">Colophon</a></aside>
 
-  <!-- Ocotber -->
-  <div><h1>Supersymmetry</h1></div>
-  <section>
-    <h3 class="test">October 2016</h3>
-    <figure class="oct-16"></figure>
-    <main>
-      <header><h2>Airbnb—Tokyo</h2></header>
-      <article>
-        <h3>About</h3>
-        <p>The new Tokyo workplace is in the busy neighbourhood of Shinjuku. Working alongside Suppose Design Office, the company's Environments Team aimed to bring some of that ambience inside.</p>
-        <p>"The main concept of this project was to recreate the feeling and vibe of a Tokyo neighbourhood. Instead of using simple walls, we laid out building-inspired volumes to articulate the space, dividing the various functions while keeping a continuity throughout the whole office." – Makoto Tanijiri</p>
-        <h3>Architect</h3>
-        <figcaption><a target="_blank" href="https://www.suppose.jp">Studio Periphery + Suppose Design Office</a></figcaption>
-      </article>
-    </main>
-  </section>
+    <div><h1>Supersymmetry</h1></div>
+    <!-- Ocotber -->
+    <section id="section">
+      <h3 class="test">October 2016</h3>
+      <figure class="oct-16"></figure>
+      <main>
+        <header><h2>Airbnb—Tokyo</h2></header>
+        <article>
+          <h3>About</h3>
+          <p>The new Tokyo workplace is in the busy neighbourhood of Shinjuku. Working alongside Suppose Design Office, the company's Environments Team aimed to bring some of that ambience inside.</p>
+          <p>"The main concept of this project was to recreate the feeling and vibe of a Tokyo neighbourhood. Instead of using simple walls, we laid out building-inspired volumes to articulate the space, dividing the various functions while keeping a continuity throughout the whole office." – Makoto Tanijiri</p>
+          <h3>Architect</h3>
+          <figcaption><a target="_blank" href="https://www.suppose.jp">Studio Periphery + Suppose Design Office</a></figcaption>
+        </article>
+      </main>
+    </section>
     <!-- Navigation -->
     <div class="left-nav">
       <a href="#">September 2016
@@ -63,5 +68,13 @@
           </g></svg>
       </a>
     </div>
+
   </body>
 </html>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("colophon").classList.toggle("active");
+    document.getElementById("section").classList.toggle("blur");
+  }
+</script>
