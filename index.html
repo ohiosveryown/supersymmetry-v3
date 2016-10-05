@@ -19,15 +19,12 @@
   </head>
   <body>
     <!-- Colophon -->
-    <div id="colophon" class="colophon"><a onclick="toggleMenu()" href="#">Close</a>
-      <p>The new Tokyo workplace is in the busy neighbourhood of Shinjuku. Working alongside Suppose Design Office, the company's Environments Team aimed to bring some of that ambience inside.</p>
-      <p>"The main concept of this project was to recreate the feeling and vibe of a Tokyo neighbourhood. Instead of using simple walls, we laid out building-inspired volumes to articulate the space, dividing the various functions while keeping a continuity throughout the whole office." – Makoto Tanijiri</p>
-    </div>
-    <aside><a onclick="toggleMenu()" href="#">Colophon</a></aside>
-
+    <a onclick="toggleMenu()" class="toggle" href="#">Colophon</a>
+    <aside id="colophon" class="colophon"></aside>
+    <!-- Title -->
     <div><h1>Supersymmetry</h1></div>
     <!-- Ocotber -->
-    <section id="section">
+    <section id="main">
       <h3 class="test">October 2016</h3>
       <figure class="oct-16"></figure>
       <main>
@@ -42,7 +39,7 @@
       </main>
     </section>
     <!-- Navigation -->
-    <div class="left-nav">
+    <div id="left-nav" class="left-nav">
       <a href="#">September 2016
         <svg class="left-arrow" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
           <g fill="#2C2B2E" fill-rule="evenodd">
@@ -55,7 +52,7 @@
           </g></svg>
       </a>
     </div>
-    <div class="right-nav">
+    <div id="right-nav" class="right-nav">
       <a href="#">December 2016
         <svg class="left-arrow" xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
           <g fill="#2C2B2E" fill-rule="evenodd">
@@ -68,13 +65,13 @@
           </g></svg>
       </a>
     </div>
-
+    <script>
+      function toggleMenu() {
+        document.getElementById("colophon").classList.toggle("active");
+        document.getElementById("left-nav").classList.toggle("active");
+        document.getElementById("right-nav").classList.toggle("active");
+        document.getElementById("main").classList.toggle("blur");
+      }
+    </script>
   </body>
 </html>
-
-<script>
-  function toggleMenu() {
-    document.getElementById("colophon").classList.toggle("active");
-    document.getElementById("section").classList.toggle("blur");
-  }
-</script>
