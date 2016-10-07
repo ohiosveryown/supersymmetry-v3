@@ -196,7 +196,7 @@ a.toggle {
 .project-details {
   margin: 0 auto;
   position: fixed;
-  padding: 4rem 0 0;
+  padding: 4rem 3rem;
   width: grid-width(10);
 
   @include breakpoint(md) {
