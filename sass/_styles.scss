@@ -361,7 +361,6 @@ main:hover {
 
 header {
   margin: 2rem auto auto;
-
   @include breakpoint(md) {
     margin: -5rem auto 0 auto;
     width: grid-width(8);

@@ -1,0 +1,65 @@
+
+body {
+  opacity: 1;
+  animation: none;
+  //animation-fill-mode: forwards;
+  //transition-timing-function: ease-in-out;
+}
+
+ul {
+  height: 100vh;
+  //overflow: hidden;
+  white-space: nowrap;
+  font-size: 0;
+
+  @include breakpoint(md_landscape) {
+    overflow: hidden;
+  }
+}
+
+li {
+  //border: 1px solid pink;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  transition: all 300ms ease;
+
+  @include breakpoint(md_landscape) {
+    display: inline-block;
+    overflow: hidden;
+    width: 33.333%;
+  }
+
+  h3 {
+    margin: 0;
+
+  }
+}
+
+li:before {
+  content: '';
+  display: block;
+  background: rgba(202,2,27,1);
+  mix-blend-mode: multiply;
+  height: 100%;
+  width: 100%;
+}
+
+.oct-sm {
+  background-image: url('../../images/2016/oct-sm.jpg');
+  background-position: center;
+  background-size: cover;
+  z-index: -101;
+}
+
+.test-sm {
+  background-image: url('../../images/2016/test-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.cabin-sm {
+  background-image: url('../../images/2016/cabin-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
