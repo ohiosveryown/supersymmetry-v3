@@ -19,33 +19,38 @@
   </head>
   <body>
 
-    <div id="horizontal" class="year">
-      <a class="reset-a" href="index.html"><h1>Super— <br>Symmetry</h1></a>
-      <div class="month entry test-sm">
-        <a class="reset-a" href="airbnb-tokyo.html">
+    <div class="year">
+      <a href="index.html"><h1>Super— <br>Symmetry</h1></a>
+      <!-- October 2016 -->
+      <div class="month test-sm entry">
+        <a href="#">
           <div class="month-content">
-            <h3>October 2016</h3>
+            <h3>November</h3>
             <h2>Villa <br>Le Lac</h2>
+            <span>View Project</span>
             <p>Le Corbusier</p>
           </div>
         </a>
       </div>
-
-
-      <div class="month entry oct-sm">
-        <div class="month-content">
-          <h3>November 2016</h3>
-          <h2>Airbnb— <br>Tokyo</h2>
-          <p>Studio Periphery + Suppose Design Office</p>
-        </div>
+      <!-- November 2016 -->
+      <div class="month oct-sm entry">
+        <a href="#">
+          <div class="month-content">
+            <h3>Ocotober</h3>
+            <h2>Airbnb—<br>Tokyo</h2>
+            <p>Studio Periphery + Suppose Design Office</p>
+          </div>
+        </a>
       </div>
-
-      <div class="month entry cabin-sm">
-        <div class="month-content">
-          <h3>December 2016</h3>
-          <h2>Herron Island Club</h2>
-          <p>First Lamp Architects</p>
-        </div>
+      <!-- December 2016 -->
+      <div class="month cabin-sm entry">
+        <a href="#">
+          <div class="month-content">
+            <h3>December</h3>
+            <h2>Herron Island Club</h2>
+            <p>First Lamp Architects</p>
+          </div>
+        </a>
       </div>
 
 
@@ -55,50 +60,19 @@
       <div class="month">December</div>
     </div>
 
-
-
-
-    <!--
-    <ul id="horizontal">
-      <li class="test-sm">
-        <h3>October</h3>
-        <p>this is a pragraph of tect here</p>
-      </li>
-      <li class="oct-sm">
-        <h3>October</h3>
-        <p>this is a pragraph of tect here</p>
-      </li>
-      <li class="cabin-sm">
-        <h3>October</h3>
-        <p>this is a pragraph of tect here</p>
-      </li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  -->
-
-    <!-- horizontal Scroll Able/Disable
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- JQ 😞  -->
+    <script id="mobile-null" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- Sidescroll  -->
+    <script id="mobile-null">
+      !function(a){function d(b){var c=b||window.event,d=[].slice.call(arguments,1),e=0,g=0,h=0;return b=a.event.fix(c),b.type="mousewheel",c.wheelDelta&&(e=c.wheelDelta/120),c.detail&&(e=-c.detail/3),h=e,void 0!==c.axis&&c.axis===c.HORIZONTAL_AXIS&&(h=0,g=-1*e),void 0!==c.wheelDeltaY&&(h=c.wheelDeltaY/120),void 0!==c.wheelDeltaX&&(g=-1*c.wheelDeltaX/120),d.unshift(b,e,g,h),(a.event.dispatch||a.event.handle).apply(this,d)}var b=["DOMMouseScroll","mousewheel"];if(a.event.fixHooks)for(var c=b.length;c;)a.event.fixHooks[b[--c]]=a.event.mouseHooks;a.event.special.mousewheel={setup:function(){if(this.addEventListener)for(var a=b.length;a;)this.addEventListener(b[--a],d,!1);else this.onmousewheel=d},teardown:function(){if(this.removeEventListener)for(var a=b.length;a;)this.removeEventListener(b[--a],d,!1);else this.onmousewheel=null}},a.fn.extend({mousewheel:function(a){return a?this.bind("mousewheel",a):this.trigger("mousewheel")},unmousewheel:function(a){return this.unbind("mousewheel",a)}})}(jQuery);
+    </script>
+    <!-- Dont run on mobile -->
     <script>
-      (function() {
-        //if($('body').width() > 400) { $('head').append()}
-        function scrollHorizontally(e) {
-            e = window.event || e;
-            var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-            document.getElementById('horizontal').scrollLeft -= (delta*9); // Multiplied by 40
-            e.preventDefault();
-        }
-        if (document.getElementById('horizontal').addEventListener) {
-            // IE9, Chrome, Safari, Opera
-            document.getElementById('horizontal').addEventListener("mousewheel", scrollHorizontally, false);
-            // Firefox
-            document.getElementById('horizontal').addEventListener("DOMMouseScroll", scrollHorizontally, false);
-        } else {
-            // IE 6/7/8
-            document.getElementById('horizontal').attachEvent("onmousewheel", scrollHorizontally);
-        }
-      })();
+      function refresh(){ww=$(window).width();ww<limit?location.reload(!0):ww>limit?location.reload(!0):ww=limit}document.documentElement.clientWidth>699&&$(document).ready(function(){$(".year").mousewheel(function(a,b){this.scrollLeft-=40*b,a.preventDefault()})});var ww=$(window).width(),limit=699,tOut;$(window).resize(function(){var a=$(window).width();clearTimeout(tOut),(ww>limit&&a<limit||ww<limit&&a>limit)&&(tOut=setTimeout(refresh,100))});
+    </script>
+    <!-- Remove Null Scripts Small  -->
+    <script>
+      $(document).ready(function(){/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent)&&$("#mobile-null").remove()});
     </script>
   </body>
 </html>

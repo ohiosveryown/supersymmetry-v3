@@ -23,6 +23,10 @@ $gravity: #0C0C0C;
     @media (min-width: 700px) { @content; }
   }
 
+  @else if $class == md_ls {
+    @media (min-width: 1000px) { @content; }
+  }
+
   @else if $class == lg {
     @media (min-width: 1200px) { @content; }
   }
