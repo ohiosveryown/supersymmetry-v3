@@ -4,7 +4,7 @@
 
 body {
   opacity: 0;
-  animation: fade-n-scale 1.5s;
+  animation: fade-n-scale 1.75s;
   animation-fill-mode: forwards;
   transition-timing-function: ease-in-out;
 }
@@ -20,7 +20,7 @@ body {
   float: left;
   margin: 3rem 0;
   transition: all 300ms ease;
-  z-index: 404;
+  z-index: 303;
 
   @include breakpoint(md) {
     position: absolute;
@@ -49,6 +49,10 @@ body {
   }
 }
 
+.left-nav.active {
+  display: none;
+}
+
 .left-nav:hover {
   opacity: 1;
   svg {
@@ -65,7 +69,7 @@ body {
   float: right;
   margin: 3rem 0;
   transition: all 300ms ease;
-  z-index: 404;
+  z-index: 303;
 
   @include breakpoint(md) {
     position: absolute;
@@ -94,6 +98,10 @@ body {
   }
 }
 
+.right-nav.active {
+  display: none;
+}
+
 .right-nav:hover {
   opacity: 1;
 
@@ -104,8 +112,145 @@ body {
 
 
 //Colophon
-aside {
-  transform: rotate3d(1,0,0,90deg);
+a.toggle {
+  position: absolute;
+  top: 0.9%;
+  right: -4%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  z-index: 808;
+
+  @include breakpoint(sm) {
+    right: -2%;
+    top: 1%;
+  }
+
+  @include breakpoint(md) {
+    top: 1%;
+    right: 2%;
+  }
+
+  @include breakpoint(md_landscape) {
+    top: 1%;
+    right: 2%;
+  }
+
+  @include breakpoint(lg) {
+    top: 2%;
+    right: 5%;
+  }
+}
+
+.colophon {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #FFF;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: all 300ms ease;
+  z-index: 303;
+  will-change: opacity;
+
+  h3 {
+    margin: 1rem 0 0;
+    opacity: 0.7;
+    text-align: left;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+      margin: 3rem 0 0;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    line-height: 1.7;
+  }
+
+  a {
+    display: inline;
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+.colophon.active {
+  opacity: 0.85;
+//  z-index: 707;
+}
+
+.title {
+  font-family:'Circular-Std',Sans-Serif;
+	font-size: 2.8rem;
+  color: $gravity;
+  margin: -1.5rem 0 0;
+  text-transform: uppercase;
+
+	@include breakpoint(md) {
+    font-size: 4.8rem;
+  }
+}
+
+.project-details {
+  margin: 0 auto;
+  position: fixed;
+  padding: 4rem 3rem;
+  width: grid-width(10);
+
+  @include breakpoint(md) {
+    margin: 0;
+    padding: 6rem;
+    width: grid-width(7);
+  }
+
+  @include breakpoint(lg) {
+    margin: 0;
+    padding: 6rem;
+    width: grid-width(6);
+  }
+}
+
+.other-stuff {
+  position: absolute;
+  top: 11.5%;
+  right: 5%;
+  width: grid-width(4);
+
+  p {
+    margin: 2rem 0 0 0;
+  }
+}
+
+.hide-sm {
+  display: none;
+  @include breakpoint(md) {
+    display: inline;
+  }
+}
+
+.hide-sm-2 {
+  display: none;
+  @include breakpoint(md) {
+    display: block;
+  }
+}
+
+.hide-ls {
+  @include breakpoint(md_landscape) {
+    display: none;
+  }
+  @include breakpoint(lg) {
+    display: block;
+  }
+}
+
+section.blur {
+  filter: blur(7px);
+  //transform: scale3d(0.9,0.9,1);
+  //transition-delay: 50ms;
+  z-index: 404;
 }
 
 //Styles
@@ -143,9 +288,9 @@ figure {
   height: 80vh;
   opacity: 0;
   width: grid-width(12);
-  z-index: 202;
+  z-index: 303;
 
-  animation: fade-n-scale 1.75s;
+  animation: fade-n-scale 2s;
   animation-delay: 0.25s;
   animation-fill-mode: forwards;
   transition-timing-function: ease-in-out;
@@ -198,19 +343,24 @@ figure:before {
 main {
   position: relative;
   z-index: 303;
+  transition: all 300ms ease;
+  will-change: z-index, transform;
 
+  /*
   @include breakpoint(lg) {
     z-index: 101;
   }
+  */
 }
 
+/*
 main:hover {
   z-index: 303;
 }
+*/
 
 header {
   margin: 2rem auto auto;
-
   @include breakpoint(md) {
     margin: -5rem auto 0 auto;
     width: grid-width(8);

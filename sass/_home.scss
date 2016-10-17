@@ -1,0 +1,223 @@
+
+body {
+  opacity: 1;
+  animation: none;
+  //animation-fill-mode: forwards;
+  //transition-timing-function: ease-in-out;
+}
+
+a.reset-a {
+  text-decoration: none;
+}
+
+.year {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  overflow-x: hidden;
+  //overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @include breakpoint(md_landscape) {
+    flex-flow: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    line-height: 0.9;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    top: 2vw;
+    left: 6vw;
+    opacity: 1;
+    z-index: 999;
+
+    @include breakpoint(sm) {
+      font-size: 2rem;
+      top: 3vw;
+    }
+
+    @include breakpoint(md_landscape) {
+      font-size: 3.2rem;
+      top: 5vw;
+    }
+    @include breakpoint(md_ls) {
+      left: 4vw;
+    }
+  }
+  h1:hover {
+    text-decoration: line-through;
+  }
+}
+
+.month {
+  flex: 1;
+  //border: 1px solid blue;
+  min-height: 33.333vh;
+  width: 100vw;
+
+  a {
+    text-decoration: none;
+  }
+
+  @include breakpoint(md_landscape) {
+    height: 100vh;
+    min-width: 33.333vw;
+  }
+
+  .month-content {
+    //border: 1px solid blue;
+    margin: 20vw 6vw 0;
+    position: relative;
+    width: grid-width(5);
+    z-index: 808;
+
+    @include breakpoint(md_landscape) {
+      margin: 50vh 6vw 0;
+      width: grid-width(7);
+    }
+    @include breakpoint(md_ls) {
+      margin: 48vh 4vw 0;
+      width: grid-width(8);
+    }
+  }
+
+  h1, h2, h3, p, a {
+    color: #FFF;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  h2 {
+    //border: 1px solid yellow;
+    font-size: 2.4rem;
+    line-height: 0.9;
+    margin: 1.4rem 0 0;
+    //max-width: 13.5rem;
+    transition: all 300ms ease;
+    will-change: transform;
+    @include breakpoint(md_landscape) {
+      line-height: 1.1;
+      margin: 18vw 0 0;
+    }
+    @include breakpoint(md_ls) {
+      font-size: 4rem;
+      margin: 10vw 0 0;
+    }
+  }
+
+  p {
+    //border: 1px solid red;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    margin: 1rem 0 0;
+    //max-width: 13.5rem;
+    transition: all 300ms ease;
+    will-change: transform;
+    @include breakpoint(md_landscape) {
+      position: absolute;
+      top: 30vw;
+    }
+    @include breakpoint(md_ls) {
+      top: 22vw;
+    }
+  }
+
+  span {
+    display: none;
+    @include breakpoint(md_landscape) {
+      display: block;
+      opacity: 0;
+      transition: all 400ms ease;
+      will-change: opacity;
+    }
+  }
+}
+
+.month-content:hover {
+  h2 {
+    @include breakpoint(md_landscape) {
+      transform: translate3d(0,-20px,0);
+    }
+  }
+
+  p {
+    @include breakpoint(md_landscape) {
+      transform: translate3d(0,15px,0);
+    }
+  }
+
+  span {
+    opacity: 1;
+  }
+  span:hover {
+    text-decoration: line-through;
+  }
+}
+
+.entry:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  //background: rgba(208,2,27,1);
+  background: rgba(170,0,20,1);
+  mix-blend-mode: darken;
+  //mix-blend-mode: multiply;
+  height: 100%;
+  width: 100%;
+}
+
+#left-arrow {
+  display: none;
+  @include breakpoint(md_ls) {
+    display: block;
+    position: absolute;
+    bottom: 3vw;
+    left: 4vw;
+    opacity: 0.7;
+    transform: rotate3d(0,0,1,180deg);
+    will-change: opacity, transform;
+    z-index: 999;
+  }
+}
+
+#right-arrow {
+  display: none;
+  @include breakpoint(md_ls) {
+    display: block;
+    position: absolute;
+    bottom: 3vw;
+    right: 4vw;
+    opacity: 0.7;
+    will-change: opacity, transform;
+    z-index: 999;
+  }
+}
+
+#right-arrow:hover, #left-arrow:hover {
+  opacity: 1;
+}
+
+.oct-sm {
+  background-image: url('../../images/2016/oct-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.cabin-sm {
+  background-image: url('../../images/2016/cabin-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.test-sm {
+  background-image: url('../../images/2016/test-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
