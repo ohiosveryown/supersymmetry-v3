@@ -16,7 +16,8 @@ a.reset-a {
   display: flex;
   flex-flow: column;
   overflow-x: hidden;
-  overflow-y: auto;
+  //overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   @include breakpoint(md_landscape) {
     flex-flow: row;
@@ -24,7 +25,7 @@ a.reset-a {
     overflow-y: hidden;
   }
   h1 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     letter-spacing: 0;
     line-height: 0.9;
     position: absolute;
@@ -35,9 +36,17 @@ a.reset-a {
     opacity: 1;
     z-index: 999;
 
+    @include breakpoint(sm) {
+      font-size: 2rem;
+      top: 3vw;
+    }
+
     @include breakpoint(md_landscape) {
       font-size: 3.2rem;
       top: 5vw;
+    }
+    @include breakpoint(md_ls) {
+      left: 4vw;
     }
   }
   h1:hover {
@@ -71,6 +80,10 @@ a.reset-a {
       margin: 50vh 6vw 0;
       width: grid-width(7);
     }
+    @include breakpoint(md_ls) {
+      margin: 48vh 4vw 0;
+      width: grid-width(8);
+    }
   }
 
   h1, h2, h3, p, a {
@@ -91,6 +104,10 @@ a.reset-a {
       line-height: 1.1;
       margin: 18vw 0 0;
     }
+    @include breakpoint(md_ls) {
+      font-size: 4rem;
+      margin: 10vw 0 0;
+    }
   }
 
   p {
@@ -105,22 +122,33 @@ a.reset-a {
       position: absolute;
       top: 30vw;
     }
+    @include breakpoint(md_ls) {
+      top: 22vw;
+    }
   }
 
   span {
-    opacity: 0;
-    transition: all 400ms ease;
-    will-change: opacity;
+    display: none;
+    @include breakpoint(md_landscape) {
+      display: block;
+      opacity: 0;
+      transition: all 400ms ease;
+      will-change: opacity;
+    }
   }
 }
 
 .month-content:hover {
   h2 {
-    transform: translate3d(0,-20px,0);
+    @include breakpoint(md_landscape) {
+      transform: translate3d(0,-20px,0);
+    }
   }
 
   p {
-    transform: translate3d(0,15px,0);
+    @include breakpoint(md_landscape) {
+      transform: translate3d(0,15px,0);
+    }
   }
 
   span {
@@ -133,6 +161,7 @@ a.reset-a {
 
 .entry:before {
   content: '';
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -142,6 +171,37 @@ a.reset-a {
   //mix-blend-mode: multiply;
   height: 100%;
   width: 100%;
+}
+
+#left-arrow {
+  display: none;
+  @include breakpoint(md_ls) {
+    display: block;
+    position: absolute;
+    bottom: 3vw;
+    left: 4vw;
+    opacity: 0.7;
+    transform: rotate3d(0,0,1,180deg);
+    will-change: opacity, transform;
+    z-index: 999;
+  }
+}
+
+#right-arrow {
+  display: none;
+  @include breakpoint(md_ls) {
+    display: block;
+    position: absolute;
+    bottom: 3vw;
+    right: 4vw;
+    opacity: 0.7;
+    will-change: opacity, transform;
+    z-index: 999;
+  }
+}
+
+#right-arrow:hover, #left-arrow:hover {
+  opacity: 1;
 }
 
 .oct-sm {

@@ -29,7 +29,7 @@
 		"outputAbbreviatedPath": "\/images\/2016\/cabin-sm.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/images\/2016\/oct-sm.jpg": {
 		"fileType": 16384,
@@ -40,7 +40,7 @@
 		"outputAbbreviatedPath": "\/images\/2016\/oct-sm.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/images\/2016\/oct.jpg": {
 		"fileType": 16384,
@@ -51,7 +51,7 @@
 		"outputAbbreviatedPath": "\/images\/2016\/oct.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/images\/2016\/test-sm.jpg": {
 		"fileType": 16384,
@@ -62,7 +62,7 @@
 		"outputAbbreviatedPath": "\/images\/2016\/test-sm.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/images\/2016\/test.jpg": {
 		"fileType": 16384,
@@ -73,7 +73,7 @@
 		"outputAbbreviatedPath": "\/images\/2016\/test.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/index.html": {
 		"fileType": 8192,
