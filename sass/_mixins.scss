@@ -1,29 +1,37 @@
 
-
 //Variable Colors
-$klein: #000ABB;
+$gravity: #2C2B2E; //primary color
 $volt: #04AF6D;
-$gravity: #0C0C0C;
+
 
 // Mixins – Media Queries
+
+/*==========
+
+bas  -  0-359
+xs  -  360
+sm  -  400
+md  -  700
+mdl -  1000
+lg  -  1200
+xl  -  1500
+
+===========*/
+
 @mixin breakpoint($class) {
   @if $class == xs {
-    @media (min-width: 300px) { @content; }
+    @media (min-width: 360px) { @content; }
   }
 
   @if $class == sm {
-    @media (min-width: 350px) { @content; }
+    @media (min-width: 400px) { @content; }
   }
 
   @else if $class == md {
-    @media (min-width: 600px) { @content; }
-  }
-
-  @else if $class == md_landscape {
     @media (min-width: 700px) { @content; }
   }
 
-  @else if $class == md_ls {
+  @else if $class == md_landscape {
     @media (min-width: 1000px) { @content; }
   }
 
@@ -32,11 +40,11 @@ $gravity: #0C0C0C;
   }
 
   @else if $class == xl {
-    @media (min-width: 1550px) { @content; }
+    @media (min-width: 1500px) { @content; }
   }
 
   //@else {
-    //@warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+    //@warn "Breakpoint mixin supports: xs, sm, md, md_landscape, lg, xl";
   //}
 }
 
