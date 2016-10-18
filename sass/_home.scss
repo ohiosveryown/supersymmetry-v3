@@ -1,3 +1,7 @@
+body {
+  background: #C20019;
+}
+
 .logotype {
   font: 400 1.4rem/0.95 'Circular-Std', sans-serif;
   color: $gravity;
@@ -16,6 +20,9 @@
   }
   @include breakpoint(md) {
     font-size: 2.4rem;
+  }
+  @include breakpoint(md_landscape) {
+    left: 3vw;
   }
 }
 
@@ -50,17 +57,124 @@
     height: 100vh;
     min-width: 33.333vw;
   }
+
+  a {
+    text-decoration: none;
+
+    h2, p {
+      transition: all 300ms ease;
+      will-change: transform;
+    }
+
+    span {
+      display: none;
+      @include breakpoint(md_landscape) {
+        display: block;
+        opacity: 0;
+        transition: all 300ms ease;
+      }
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+
+    span {
+      @include breakpoint(md_landscape) {
+        opacity: 1;
+      }
+    }
+
+    span:hover {
+      text-decoration: line-through;
+    }
+
+    h2 {
+      @include breakpoint(md_landscape) {
+        transform: translate3d(0,-24px,0);
+      }
+    }
+    p {
+      @include breakpoint(md_landscape) {
+        transform: translate3d(0,10px,0);
+      }
+    }
+  }
 }
 
 .month-content {
-  //border: 1px solid red;
-  margin: 12vw 4vw 0;
+  //border: 1px solid green;
+  margin: 20vw 4vw 0;
   width: grid-width(5);
 
-  h2, h3, p, a {
+  @include breakpoint(sm) {
+    margin: 24vw 4vw 0;
+  }
+  @include breakpoint(md) {
+    margin: 14vw 4vw 0;
+    width: grid-width(4);
+  }
+  @include breakpoint(md_landscape) {
+    margin: 32vw 3vw 0;
+    width: grid-width(8);
+  }
+
+  h2, h3, p, a, span {
     text-align: left;
   }
   h2 {
-    margin: 3.8vw 0 0;
+    margin: 5.4vw 0 0;
+
+    @include breakpoint(xs) {
+      margin: 8vw 0 0;
+    }
+    @include breakpoint(md_landscape) {
+      margin: 10vw 0 0;
+    }
   }
+  p {
+    //border: 1px solid purple;
+    margin: 2.8vw 0 0;
+
+    @include breakpoint(md) {
+      margin: 2vw 0 0;
+    }
+  }
+}
+
+.lf-arrow {
+  display: none;
+  transition: all 300ms ease;
+  transform: rotate3d(0,1,0,180deg);
+  will-change: transform;
+
+  @include breakpoint(md_landscape) {
+    display: block;
+    position: absolute;
+    bottom: 4vw;
+    left: 3vw;
+    z-index: 808;
+  }
+}
+
+.lf-arrow:hover {
+  transform: rotate3d(0,1,0,180deg) translate3d(5px,0,0);
+}
+
+.rt-arrow {
+  display: none;
+  transition: all 300ms ease;
+  will-change: transform;
+
+  @include breakpoint(md_landscape) {
+    display: block;
+    position: absolute;
+    bottom: 4vw;
+    right: 3vw;
+    z-index: 808;
+  }
+}
+
+.rt-arrow:hover {
+  transform: translate3d(5px,0,0);
 }
