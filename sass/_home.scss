@@ -53,7 +53,14 @@
 }
 
 .month-content {
-  border: 1px solid red;
-  margin: 14vw 0 0;
+  //border: 1px solid red;
+  margin: 12vw 4vw 0;
   width: grid-width(5);
+
+  h2, h3, p, a {
+    text-align: left;
+  }
+  h2 {
+    margin: 3.8vw 0 0;
+  }
 }
