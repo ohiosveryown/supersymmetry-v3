@@ -88,11 +88,12 @@ body {
 
     span {
       @include breakpoint(md_landscape) {
-        opacity: 1;
+        opacity: 0.5;
       }
     }
 
     span:hover {
+      opacity: 1;
       text-decoration: line-through;
     }
 
@@ -112,6 +113,8 @@ body {
 .month-content {
   //border: 1px solid green;
   margin: 20vw 4vw 0;
+  position: relative;
+  z-index: 999;
   width: grid-width(5);
 
   @include breakpoint(sm) {
@@ -172,7 +175,7 @@ body {
     position: absolute;
     bottom: 4%;
     left: 3vw;
-    z-index: 808;
+    z-index: 909;
   }
 }
 
@@ -190,10 +193,32 @@ body {
     position: absolute;
     bottom: 4%;
     right: 3vw;
-    z-index: 808;
+    z-index: 909;
   }
 }
 
 .rt-arrow:hover {
   transform: translate3d(5px,0,0);
+}
+
+.oct-sm {
+  background-image: url('../../images/2016/oct-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.sept-sm {
+  background-image: url('../../images/2016/cabin-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.aug-sm {
+  background-image: url('../../images/2016/test-sm.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.entry-red:before {
+  @include entry-red;
 }
