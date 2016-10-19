@@ -1,16 +1,40 @@
-
 body {
-  opacity: 1;
-  animation: none;
-  //animation-fill-mode: forwards;
-  //transition-timing-function: ease-in-out;
+  background: #C20019;
 }
 
-a.reset-a {
-  text-decoration: none;
+.logotype {
+  font: 400 1.4rem/0.95 'Circular-Std', sans-serif;
+  color: $gravity;
+  position: absolute;
+  left: 4vw;
+  top: 4vw;
+  text-align: left;
+  text-transform: uppercase;
+  z-index: 909;
+
+  @include breakpoint(xs) {
+    font-size: 1.8rem;
+  }
+  @include breakpoint(sm) {
+    font-size: 2rem;
+  }
+  @include breakpoint(md) {
+    font-size: 2.4rem;
+  }
+  @include breakpoint(md_landscape) {
+    left: 3vw;
+  }
+  @include breakpoint(lg) {
+    font-size: 3.2rem;
+  }
+}
+
+.logotype:hover {
+  text-decoration: line-through;
 }
 
 .year {
+  border: 2px solid pink;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -24,184 +48,157 @@ a.reset-a {
     overflow-x: scroll;
     overflow-y: hidden;
   }
-  h1 {
-    font-size: 1.8rem;
-    letter-spacing: 0;
-    line-height: 0.9;
-    position: absolute;
-    text-align: left;
-    text-transform: uppercase;
-    top: 2vw;
-    left: 6vw;
-    opacity: 1;
-    z-index: 999;
-
-    @include breakpoint(sm) {
-      font-size: 2rem;
-      top: 3vw;
-    }
-
-    @include breakpoint(md_landscape) {
-      font-size: 3.2rem;
-      top: 5vw;
-    }
-    @include breakpoint(md_ls) {
-      left: 4vw;
-    }
-  }
-  h1:hover {
-    text-decoration: line-through;
-  }
 }
 
 .month {
+  border: 1px solid blue;
   flex: 1;
-  //border: 1px solid blue;
   min-height: 33.333vh;
   width: 100vw;
-
-  a {
-    text-decoration: none;
-  }
 
   @include breakpoint(md_landscape) {
     height: 100vh;
     min-width: 33.333vw;
   }
 
-  .month-content {
-    //border: 1px solid blue;
-    margin: 20vw 6vw 0;
-    position: relative;
-    width: grid-width(5);
-    z-index: 808;
+  a {
+    text-decoration: none;
 
-    @include breakpoint(md_landscape) {
-      margin: 50vh 6vw 0;
-      width: grid-width(7);
+    h2, p {
+      transition: all 300ms ease;
+      will-change: transform;
     }
-    @include breakpoint(md_ls) {
-      margin: 48vh 4vw 0;
-      width: grid-width(8);
+
+    span {
+      display: none;
+      @include breakpoint(md_landscape) {
+        display: block;
+        opacity: 0;
+        margin: -0.5vw 0 -2vw 0;
+        position: relative;
+        transition: all 200ms ease;
+        transition-delay: 150ms;
+        will-change: opacity;
+      }
     }
   }
 
-  h1, h2, h3, p, a {
+  a:hover {
+    text-decoration: none;
+
+    span {
+      @include breakpoint(md_landscape) {
+        opacity: 0.5;
+      }
+    }
+
+    span:hover {
+      opacity: 1;
+      text-decoration: line-through;
+    }
+
+    h2 {
+      @include breakpoint(md_landscape) {
+        transform: translate3d(0,-24px,0);
+      }
+    }
+    p {
+      @include breakpoint(md_landscape) {
+        transform: translate3d(0,10px,0);
+      }
+    }
+  }
+}
+
+.month-content {
+  //border: 1px solid green;
+  margin: 20vw 4vw 0;
+  position: relative;
+  z-index: 999;
+  width: grid-width(5);
+
+  @include breakpoint(sm) {
+    margin: 24vw 4vw 0;
+  }
+  @include breakpoint(md) {
+    margin: 14vw 4vw 0;
+    width: grid-width(4);
+  }
+  @include breakpoint(md_landscape) {
+    margin: 32vw 3vw 0;
+    width: grid-width(8);
+  }
+  @include breakpoint(lg) {
+    margin: 24vw 3vw 0;
+    width: grid-width(8.4);
+  }
+
+  h2, h3, p, a, span {
     color: #FFF;
-    font-size: 12px;
     text-align: left;
   }
-
   h2 {
-    //border: 1px solid yellow;
-    font-size: 2.4rem;
-    line-height: 0.9;
-    margin: 1.4rem 0 0;
-    //max-width: 13.5rem;
-    transition: all 300ms ease;
-    will-change: transform;
-    @include breakpoint(md_landscape) {
-      line-height: 1.1;
-      margin: 18vw 0 0;
+    margin: 5.4vw 0 0;
+
+    @include breakpoint(xs) {
+      margin: 8vw 0 0;
     }
-    @include breakpoint(md_ls) {
-      font-size: 4rem;
-      margin: 10vw 0 0;
+    @include breakpoint(md) {
+      margin: 6.4vw 0 0;
+    }
+    @include breakpoint(md_landscape) {
+      margin: 9vw 0 0;
+    }
+    @include breakpoint(lg) {
+      margin: 12vw 0 0;
     }
   }
-
   p {
-    //border: 1px solid red;
-    font-size: 1.2rem;
-    line-height: 1.1;
-    margin: 1rem 0 0;
-    //max-width: 13.5rem;
-    transition: all 300ms ease;
-    will-change: transform;
-    @include breakpoint(md_landscape) {
-      position: absolute;
-      top: 30vw;
-    }
-    @include breakpoint(md_ls) {
-      top: 22vw;
-    }
-  }
+    //border: 1px solid purple;
+    margin: 2.8vw 0 0;
+    max-width: 19rem;
 
-  span {
-    display: none;
-    @include breakpoint(md_landscape) {
-      display: block;
-      opacity: 0;
-      transition: all 400ms ease;
-      will-change: opacity;
+    @include breakpoint(md) {
+      margin: 2vw 0 0;
     }
   }
 }
 
-.month-content:hover {
-  h2 {
-    @include breakpoint(md_landscape) {
-      transform: translate3d(0,-20px,0);
-    }
-  }
-
-  p {
-    @include breakpoint(md_landscape) {
-      transform: translate3d(0,15px,0);
-    }
-  }
-
-  span {
-    opacity: 1;
-  }
-  span:hover {
-    text-decoration: line-through;
-  }
-}
-
-.entry:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  //background: rgba(208,2,27,1);
-  background: rgba(170,0,20,1);
-  mix-blend-mode: darken;
-  //mix-blend-mode: multiply;
-  height: 100%;
-  width: 100%;
-}
-
-#left-arrow {
+.lf-arrow {
   display: none;
-  @include breakpoint(md_ls) {
+  transition: all 300ms ease;
+  transform: rotate3d(0,1,0,180deg);
+  will-change: transform;
+
+  @include breakpoint(md_landscape) {
     display: block;
     position: absolute;
-    bottom: 3vw;
-    left: 4vw;
-    opacity: 0.7;
-    transform: rotate3d(0,0,1,180deg);
-    will-change: opacity, transform;
-    z-index: 999;
+    bottom: 4%;
+    left: 3vw;
+    z-index: 909;
   }
 }
 
-#right-arrow {
+.lf-arrow:hover {
+  transform: rotate3d(0,1,0,180deg) translate3d(5px,0,0);
+}
+
+.rt-arrow {
   display: none;
-  @include breakpoint(md_ls) {
+  transition: all 300ms ease;
+  will-change: transform;
+
+  @include breakpoint(md_landscape) {
     display: block;
     position: absolute;
-    bottom: 3vw;
-    right: 4vw;
-    opacity: 0.7;
-    will-change: opacity, transform;
-    z-index: 999;
+    bottom: 4%;
+    right: 3vw;
+    z-index: 909;
   }
 }
 
-#right-arrow:hover, #left-arrow:hover {
-  opacity: 1;
+.rt-arrow:hover {
+  transform: translate3d(5px,0,0);
 }
 
 .oct-sm {
@@ -210,14 +207,18 @@ a.reset-a {
   background-size: cover;
 }
 
-.cabin-sm {
+.sept-sm {
   background-image: url('../../images/2016/cabin-sm.jpg');
   background-position: center;
   background-size: cover;
 }
 
-.test-sm {
+.aug-sm {
   background-image: url('../../images/2016/test-sm.jpg');
   background-position: center;
   background-size: cover;
+}
+
+.entry-red:before {
+  @include entry-red;
 }

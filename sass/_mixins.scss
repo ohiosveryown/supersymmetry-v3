@@ -1,29 +1,37 @@
 
-
 //Variable Colors
-$klein: #000ABB;
+$gravity: #2C2B2E; //primary color
 $volt: #04AF6D;
-$gravity: #0C0C0C;
+
 
 // Mixins – Media Queries
+
+/*==========
+
+bas  -  0-359
+xs  -  360
+sm  -  400
+md  -  700
+mdl -  1000
+lg  -  1200
+xl  -  1500
+
+===========*/
+
 @mixin breakpoint($class) {
   @if $class == xs {
-    @media (min-width: 300px) { @content; }
+    @media (min-width: 360px) { @content; }
   }
 
   @if $class == sm {
-    @media (min-width: 350px) { @content; }
+    @media (min-width: 400px) { @content; }
   }
 
   @else if $class == md {
-    @media (min-width: 600px) { @content; }
-  }
-
-  @else if $class == md_landscape {
     @media (min-width: 700px) { @content; }
   }
 
-  @else if $class == md_ls {
+  @else if $class == md_landscape {
     @media (min-width: 1000px) { @content; }
   }
 
@@ -32,14 +40,30 @@ $gravity: #0C0C0C;
   }
 
   @else if $class == xl {
-    @media (min-width: 1550px) { @content; }
+    @media (min-width: 1500px) { @content; }
   }
 
   //@else {
-    //@warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+    //@warn "Breakpoint mixin supports: xs, sm, md, md_landscape, lg, xl";
   //}
 }
 
+//Entry Red
+@mixin entry-red() {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //background: rgba(208,2,27,1);
+  //background: rgba(170,0,20,1);
+  background: #FF0E05;
+  mix-blend-mode: darken;
+  //mix-blend-mode: multiply;
+  height: 100%;
+  width: 100%;
+}
 
 //Hover Bg
 @mixin hover-bg() {
@@ -52,7 +76,7 @@ $gravity: #0C0C0C;
   display: block;
   background: #003AFF;
   height: 100%;
-  width: 100%;
+  width: 10%;
   position: absolute;
   opacity: 0;
   mix-blend-mode: multiply;
