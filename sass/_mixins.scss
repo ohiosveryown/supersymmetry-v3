@@ -4,8 +4,11 @@ $gravity: #2C2B2E; //primary color
 $volt: #04AF6D;
 
 
-// Mixins – Media Queries
+// System Font Stack
+$system-font: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 
+
+// Mixins – Media Queries
 /*==========
 
 bas  -  0-359
