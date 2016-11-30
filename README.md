@@ -2,7 +2,7 @@
 *Whoot, whoot!*
 #### Project Roadmap 🕑
 https://paper.dropbox.com/doc/Supersymmetry-LV8zwoEJr3zBSZvNYyYZJ
-## Welcome! 
+## Welcome! 👋🏼
 *<a target="_blank" href="http://supersymmetry.design">Supersymmetry</a>* is a photo blog showcasing architecture and structural engineering.
 Feel free to dig around and check out the inner workings of the site.
 </br>
